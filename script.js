@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch weather data based on location and unit
     function fetchWeatherData(location, unit) {
+        const unitType = unit === "imperial" ? "°F" : "°C";
+
         fetch(`${apiUrl}?q=${location}&units=${unit}&appid=${apiKey}`)
             .then((response) => {
                 if (!response.ok) {
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Display weather data in the weatherDisplay div
                 weatherDisplay.innerHTML = `
                     <h2>${data.name}, ${data.sys.country}</h2>
-                    <p>Temperature: ${data.main.temp}°</p>
+                    <p>Temperature: ${data.main.temp}${unitType}</p>
                     <p>Humidity: ${data.main.humidity}%</p>
                     <p>Wind Speed: ${data.wind.speed} m/s</p>
                     <p>Weather: ${data.weather[0].description}</p>
@@ -78,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Function to fetch weather data based on geolocation
     // Function to fetch weather data based on geolocation
     function fetchWeatherDataByGeoLocation(position, unit) {
         const { latitude, longitude } = position.coords;
