@@ -32,14 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Put the incoming value as their input value.
         // Allows the celsius/fahrenheit button to change when clicking "Use my location"
         locationInput.value = `${data.name}, ${data.sys.country}`;
-
+        document.querySelector('.unit-toggle').style.display = 'flex';
         weatherDisplay.innerHTML = `
-   
         <h3 class="city">Weather In ${data.name}, ${data.sys.country}</h3>
         <h3 class="temp">Temperature : ${data.main.temp}${unitType}</h3>
         <div class="flex">
-            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon">
-            <div class="description">Cloudy</div>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="" class="icon">
+            <div class="description">${data.weather[0].main}</div>
         </div>
         <div class='flex'>
         <div class="humidity">humidity :${data.main.humidity}%,</div>

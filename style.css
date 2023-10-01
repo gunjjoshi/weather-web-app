@@ -17,7 +17,7 @@ body {
   overflow: hidden;
   font-family: 'Nunito', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  background: url('http://source.unsplash.com/1980x1080/?mumbai+cit');
+  background: url('http://source.unsplash.com/1980x1080/?nature');
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
@@ -74,7 +74,7 @@ h1 {
 }
 
 #locationInput {
-  width: 100%;
+  width: 80%;
   padding: 15px;
   border: none;
   border-radius: 25px;
@@ -118,7 +118,7 @@ h1 {
 
 /* Style the unit toggle container */
 .unit-toggle {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px; /* Increased margin-bottom */
@@ -136,14 +136,15 @@ h1 {
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 25px;
-  background-color: #fff;
-  color: #333;
+  background-color: #007bff;
+  color: #fff;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .unit-toggle label:hover {
   background-color: #007bff;
   color: #fff;
+  transform: scale(1.05);
 }
 
 /* Styles the selected radio button */
@@ -174,7 +175,6 @@ h3.temp {
   justify-content: center;
   gap: 1rem;
 }
-
 /* Media query for responsiveness */
 @media screen and (max-width: 600px) {
   /* Adjust styles for smaller screens */
