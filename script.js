@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Function to fetch weather data based on geolocation
-    // Function to fetch weather data based on geolocation
     function fetchWeatherDataByGeoLocation(position, unit) {
         const { latitude, longitude } = position.coords;
         fetch(`${apiUrl}?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${apiKey}`)
