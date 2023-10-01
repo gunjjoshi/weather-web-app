@@ -22,7 +22,6 @@ body {
     text-align: center;
 }
 
-/* Style the header */
 h1 {
     font-size: 36px;
     color: #333;
@@ -30,7 +29,6 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the search container */
 .search-container {
     display: flex;
     flex-direction: column;
@@ -38,14 +36,13 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Style the location input field */
 #locationInput {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px; /* Increased margin-bottom */
+    margin-bottom: 30px; 
     font-size: 18px;
     color: #333;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
