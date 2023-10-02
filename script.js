@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // @ funtion for to change background image according to given input
 
   async function setBackgroundImage(value) {
+    console.log(  'url(http://source.unsplash.com/1980x1080/?' + value + '+city)')
     document.querySelector('body').style.backgroundImage =
       'url(http://source.unsplash.com/1980x1080/?' + value + '+city)';
   }
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
       })
       .then((data) => {
+        // Change background with location name - Replace spaces with hyphens.
+        setBackgroundImage(data.name.replace(/\s+/g, "-").toLowerCase());
+
         // Display weather data in the weatherDisplay div
 
         // Put the incoming value as their input value.
@@ -80,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (location) {
       const url = `${apiUrl}?q=${location}&units=${unit}&appid=${apiKey}`;
       fetchWeatherData(url, unit);
-      setBackgroundImage(location);
     }
   }
 
