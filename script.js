@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to fetch weather data based on location and unit
   function fetchWeatherData(url, unit) {
     const unitType = unit === 'imperial' ? '°F' : '°C';
-    const windSpeedUnit = unitType === '°F' ? 'mps' : 'm/s';
+    const windSpeedUnit = unitType === '°F' ? 'mph' : 'm/s';
     fetch(url)
       .then((response) => {
         if (!response.ok) {
