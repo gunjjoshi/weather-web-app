@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to fetch weather data based on location and unit
   function fetchWeatherData(url, unit) {
     const unitType = unit === 'imperial' ? '°F' : '°C';
+    const windSpeedUnit = unitType === '°F' ? 'mph' : 'm/s';
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class='flex'>
         <div class="humidity">humidity :${data.main.humidity}%,</div>
-        <div class="wind">Wind speed : ${data.wind.speed} m/s</div>
+        <div class="wind">Wind speed : ${data.wind.speed} ${windSpeedUnit}</div>
         </div>
 
         <div class="wind">Weather : ${data.weather[0].description}</div>
