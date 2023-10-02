@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
       })
       .then((data) => {
+        // Change background with location name - Replace spaces with hyphens.
+        setBackgroundImage(data.name.replace(/\s+/g, "-").toLowerCase());
+
         // Display weather data in the weatherDisplay div
 
         // Put the incoming value as their input value.
@@ -79,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (location) {
       const url = `${apiUrl}?q=${location}&units=${unit}&appid=${apiKey}`;
       fetchWeatherData(url, unit);
-      setBackgroundImage(location);
     }
   }
 
