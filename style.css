@@ -17,7 +17,7 @@ body {
   overflow: hidden;
   font-family: 'Nunito', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  background: url('http://source.unsplash.com/1980x1080/?+weather');
+  background: url('http://source.unsplash.com/1980x1080/?weather');
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
