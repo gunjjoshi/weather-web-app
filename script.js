@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // @ funtion for to change background image according to given input
 
   async function setBackgroundImage(value) {
-    console.log(  'url(http://source.unsplash.com/1980x1080/?' + value + '+city)')
     document.querySelector('body').style.backgroundImage =
       'url(http://source.unsplash.com/1980x1080/?' + value + '+city)';
   }
