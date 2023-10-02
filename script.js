@@ -118,4 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
         '<p>Geolocation is not supported in your browser.</p>';
     }
   });
+
+    // Listen for enter key press
+    locationInput.addEventListener("keydown",  (event) => {
+      if (event.key === "Enter") {
+          // Submit weather
+          const location = locationInput.value;
+          if(location.length > 0) {
+          const unit = document.querySelector('input[name="unit"]:checked').value;
+          const url = `${apiUrl}?q=${location}&units=${unit}&appid=${apiKey}`;
+          fetchWeatherData(url, unit);
+        }
+        // Prevent the default form submission (if applicable)
+        event.preventDefault();
+      }
+    });
 });
